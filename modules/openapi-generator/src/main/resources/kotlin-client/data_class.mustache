@@ -123,6 +123,11 @@ import {{packageName}}.infrastructure.ITransformForStorage
         {{/multiplatform}}
     {{/enumVars}}
     {{/allowableValues}}
+    {{#isString}}
+        override fun toString(): String {
+            return value.toString()
+        }
+    {{/isString}}
     }{{#kotlinx_serialization}}{{#enumUnknownDefaultCase}}
 
     @Serializer(forClass = {{{nameInCamelCase}}}::class)
